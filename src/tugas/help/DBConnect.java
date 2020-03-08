@@ -19,7 +19,7 @@ public class DBConnect {
         
     }
     
-    public DBConnect getInstance(){
+    public static DBConnect getInstance(){
         return new DBConnect();
     }
     

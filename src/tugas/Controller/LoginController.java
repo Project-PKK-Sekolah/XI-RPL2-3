@@ -6,11 +6,15 @@
 package tugas.Controller;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import tugas.help.DBConnect;
 
 /**
  *
@@ -18,13 +22,17 @@ import javafx.scene.control.Label;
  */
 public class LoginController implements Initializable {
     
-    @FXML
-    private Label label;
+    
+    @FXML 
+    private TextField tf_username;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private PasswordField pf_password;
+    
+    
+    @FXML
+     void sign_up(MouseEvent event) {
+        Connection connection = DBConnect.getInstance().getKoneksi("localhost", "3306", "root", "", "");
     }
     
     @Override
