@@ -5,29 +5,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #00A6A3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tugas.Controller.LoginController">
     <children>
       <AnchorPane layoutX="344.0" prefHeight="400.0" prefWidth="356.0" style="-fx-background-color: #efefef;">
          <children>
-            <PasswordField layoutX="57.0" layoutY="211.0" prefHeight="26.0" prefWidth="243.0" promptText="Password" />
+            <PasswordField fx:id="pf_password" layoutX="57.0" layoutY="211.0" prefHeight="26.0" prefWidth="243.0" promptText="Password" />
             <Label layoutX="57.0" layoutY="107.0" text="Username" />
             <Label alignment="CENTER" layoutX="112.0" layoutY="14.0" prefHeight="65.0" prefWidth="133.0" style="-fx-font-size: 25px;" text="Sign In" />
             <Label layoutX="58.0" layoutY="193.0" text="Password" />
-            <Button layoutX="57.0" layoutY="316.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="243.0" style="-fx-border-radius: 20; -fx-background-color: #00A6A3;" text="LOGIN" />
+            <Button layoutX="57.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="32.0" prefWidth="243.0" style="-fx-border-radius: 20; -fx-background-color: #00A6A3;" text="LOGIN" />
             <Hyperlink layoutX="198.0" layoutY="245.0" text="Lupa Password" />
-            <TextField id="username" layoutX="57.0" layoutY="125.0" prefHeight="26.0" prefWidth="243.0" promptText="Username" />
+            <TextField id="username" fx:id="tf_username" layoutX="57.0" layoutY="125.0" prefHeight="26.0" prefWidth="243.0" promptText="Username" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="89.0" fitWidth="231.0" layoutX="59.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Pictures/logo%20(1).png" />
-         </image>
-      </ImageView>
       <Label layoutX="91.0" layoutY="201.0" style="-fx-text-fill: #ffffff;" text="Manage Your School Assets" />
-      <Button layoutX="68.0" layoutY="291.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="213.0" style="-fx-border-radius: 20; -fx-background-color: #00A6A3;" text="SIGN UP" />
+      <Button layoutX="68.0" layoutY="291.0" mnemonicParsing="false" onMouseClicked="#sign_up" prefHeight="32.0" prefWidth="213.0" style="-fx-border-radius: 20; -fx-background-color: #00A6A3;" text="SIGN UP" />
     </children>
 </AnchorPane>

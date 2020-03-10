@@ -5,6 +5,7 @@
  */
 package tugas.Controller;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.net.URL;
@@ -15,10 +16,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import tugas.help.DBConnect;
 
 /**
@@ -39,6 +45,17 @@ public class RegisterController implements Initializable {
     
     @FXML
     private PasswordField pf_password;
+    
+    @FXML
+    void login(MouseEvent event) throws IOException{
+             Parent root =   FXMLLoader.load(getClass().getResource("/tugas/View/v_Login.fxml"));
+            
+            Node node = (Node) event.getSource();
+            
+            Stage stage = (Stage) node.getScene().getWindow();
+            
+            stage.setScene(new Scene(root));
+    }
     
     @FXML
     void sign_up(MouseEvent event) throws UnsupportedEncodingException, NoSuchAlgorithmException {
