@@ -58,9 +58,9 @@ public class RegisterController implements Initializable {
     }
     
     @FXML
-    void sign_up(MouseEvent event) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+    void sign_up(MouseEvent event) throws UnsupportedEncodingException, NoSuchAlgorithmException, IOException {
         
-        Connection connection = DBConnect.getKoneksi("localhost", "3306", "root", "", "idea_drop");
+        Connection connection = DBConnect.getKoneksi("localhost", "3306", "root", "", "sma");
         
         try {
             String fullname = tf_name.getText();
@@ -84,6 +84,13 @@ public class RegisterController implements Initializable {
             
             if(status > 0){
                 System.out.println("User Teregistrasi");
+                Parent root =   FXMLLoader.load(getClass().getResource("/tugas/View/v_Login.fxml"));
+            
+                 Node node = (Node) event.getSource();
+            
+                 Stage stage = (Stage) node.getScene().getWindow();
+                    
+                   stage.setScene(new Scene(root));
             }
         }
         catch(SQLException e){

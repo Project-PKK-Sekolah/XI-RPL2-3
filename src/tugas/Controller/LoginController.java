@@ -28,6 +28,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import tugas.help.DBConnect;
 
+
 /**
  *
  * @author Roshan
@@ -51,9 +52,18 @@ public class LoginController implements Initializable {
             
             stage.setScene(new Scene(root));
     }
-   
     
-    
+    @FXML
+    void forget(MouseEvent event) throws IOException{
+            Parent root =   FXMLLoader.load(getClass().getResource("/tugas/View/v_forgetpassword.fxml"));
+            
+            Node node = (Node) event.getSource();
+            
+            Stage stage = (Stage) node.getScene().getWindow();
+            
+            stage.setScene(new Scene(root));    
+    }
+//   
     @FXML
      void login(MouseEvent event) throws SQLException, IOException, NoSuchAlgorithmException {
          
@@ -68,7 +78,7 @@ public class LoginController implements Initializable {
          real_password = String.format("%040x", new BigInteger(1, digest.digest()));
             
          
-        Connection connection = DBConnect.getKoneksi("localhost", "3306", "root", "", "idea_drop");
+        Connection connection = DBConnect.getKoneksi("localhost", "3306", "root", "", "sma");
         
         Statement statement = connection.createStatement();
 //        String query = "SELECT * FROM login where username" + " = '" +username+"' or email" +
@@ -85,10 +95,8 @@ public class LoginController implements Initializable {
             Stage stage = (Stage) node.getScene().getWindow();
             
             stage.setScene(new Scene(root));
-        }
-        else{
-            System.out.println("Salah");
-        }
+            System.out.println("Login Berhasil");
+        }  
     }
     
     @Override
