@@ -16,13 +16,15 @@ import javafx.scene.control.Label;
  *
  * @author asus
  */
-public class ForgetPassword implements Initializable {
+public class ForgetPasswordController implements Initializable {
 
     @FXML
     private Label label;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
