@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tugas.Controller.HalamanUtamaUserController">
+   <left>
+      <AnchorPane fx:id="paneslide" prefHeight="352.0" prefWidth="218.0" style="-fx-background-color: #00A6A3;" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="myCircle1" fill="DODGERBLUE" layoutX="51.0" layoutY="60.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="104.0" layoutY="50.0" text="USER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="-2.0" layoutY="110.0" prefHeight="241.0" prefWidth="225.0" style="-fx-background-color: white;">
+               <children>
+                  <Button alignment="BASELINE_LEFT" layoutX="4.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="221.0" style="-fx-background-color: white;" styleClass="garis" stylesheets="@../css/v_halamanutama.css" text=" PROFIL">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="ADDRESS_CARD_ALT" size="25" />
+                     </graphic>
+                  </Button>
+                  <Button alignment="BASELINE_LEFT" layoutX="6.0" layoutY="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="218.0" onMouseClicked="#exit"  style="-fx-background-color: white;" styleClass="garis" stylesheets="@../css/v_halamanutama.css" text="   EXIT">
+                     <graphic>
+                        <OctIconView glyphName="SIGN_OUT" size="25" text="" wrappingWidth="25.0" />
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Line endX="121.0" endY="-1.0" layoutX="100.0" layoutY="112.0" startX="-100.0" startY="-1.0" stroke="WHITE" />
+         </children>
+         <effect>
+            <DropShadow color="#000000be" />
+         </effect>
+      </AnchorPane>
+   </left>
+   <top>
+      <AnchorPane prefHeight="48.0" prefWidth="600.0" style="-fx-background-color: #00A6A3;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="223.0" layoutY="14.0" text="SYSTEM MANAGEMENT ASSETS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Circle fx:id="myCircle2" fill="DODGERBLUE" layoutX="668.0" layoutY="24.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+         <effect>
+            <DropShadow color="#000000c4" />
+         </effect>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="54.0" prefHeight="93.0" prefWidth="182.0" style="-fx-background-color: #00A6A3;" text=" RETURN">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialIconView glyphName="MOVE_TO_INBOX" size="40" />
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="258.0" layoutY="54.0" prefHeight="93.0" prefWidth="183.0" style="-fx-background-color: #00A6A3;" text="  BORROW">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <Icons525View glyphName="SHARE2" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn2" buttonType="RAISED" layoutX="35.0" layoutY="199.0" prefHeight="96.0" prefWidth="180.0" style="-fx-background-color: #00A6A3;" text="WAREHOUSE">
+               <graphic>
+                  <MaterialIconView glyphName="INBOX" size="40" text="" />
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="259.0" layoutY="200.0" prefHeight="95.0" prefWidth="181.0" style="-fx-background-color: #00A6A3;" text="  REPORT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView glyphName="ALERT_OCTAGON" size="40" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
