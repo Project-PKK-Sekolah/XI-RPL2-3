@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Mar 2020 pada 02.59
+-- Waktu pembuatan: 19 Mar 2020 pada 02.57
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -43,6 +43,7 @@ CREATE TABLE `t_assets` (
 --
 
 CREATE TABLE `t_data_diri` (
+  `id_data` int(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `nis` varchar(10) NOT NULL,
   `kelas` varchar(20) NOT NULL
@@ -70,6 +71,7 @@ CREATE TABLE `t_login` (
 
 CREATE TABLE `t_transaksi` (
   `id_assets` int(255) NOT NULL,
+  `id_data` int(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `jmlh_pinjam` varchar(10) NOT NULL,
   `tgl_pinjam` date NOT NULL,
@@ -91,6 +93,7 @@ ALTER TABLE `t_assets`
 -- Indeks untuk tabel `t_data_diri`
 --
 ALTER TABLE `t_data_diri`
+  ADD PRIMARY KEY (`id_data`),
   ADD KEY `username` (`username`);
 
 --
@@ -104,7 +107,8 @@ ALTER TABLE `t_login`
 --
 ALTER TABLE `t_transaksi`
   ADD KEY `id_assets` (`id_assets`),
-  ADD KEY `username` (`username`);
+  ADD KEY `username` (`username`),
+  ADD KEY `id_data` (`id_data`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -115,6 +119,12 @@ ALTER TABLE `t_transaksi`
 --
 ALTER TABLE `t_assets`
   MODIFY `id_assets` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `t_data_diri`
+--
+ALTER TABLE `t_data_diri`
+  MODIFY `id_data` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -131,7 +141,7 @@ ALTER TABLE `t_data_diri`
 --
 ALTER TABLE `t_transaksi`
   ADD CONSTRAINT `t_transaksi_ibfk_1` FOREIGN KEY (`id_assets`) REFERENCES `t_assets` (`id_assets`),
-  ADD CONSTRAINT `t_transaksi_ibfk_2` FOREIGN KEY (`username`) REFERENCES `t_data_diri` (`username`);
+  ADD CONSTRAINT `t_transaksi_ibfk_2` FOREIGN KEY (`id_data`) REFERENCES `t_data_diri` (`id_data`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
