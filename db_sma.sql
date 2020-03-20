@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Mar 2020 pada 02.57
+-- Waktu pembuatan: 20 Mar 2020 pada 03.51
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.1
 
@@ -32,8 +32,7 @@ CREATE TABLE `t_assets` (
   `id_assets` int(255) NOT NULL,
   `nama_barang` varchar(50) NOT NULL,
   `jmlh_barang` varchar(255) NOT NULL,
-  `lokasi_barang` varchar(10) NOT NULL,
-  `status` varchar(20) NOT NULL
+  `lokasi_barang` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -44,9 +43,21 @@ CREATE TABLE `t_assets` (
 
 CREATE TABLE `t_data_diri` (
   `id_data` int(255) NOT NULL,
+  `id_kelas` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `nis` varchar(10) NOT NULL,
-  `kelas` varchar(20) NOT NULL
+  `nis` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `t_kelas`
+--
+
+CREATE TABLE `t_kelas` (
+  `id_kelas` int(11) NOT NULL,
+  `nama_kelas` varchar(255) NOT NULL,
+  `jurusan` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -94,7 +105,14 @@ ALTER TABLE `t_assets`
 --
 ALTER TABLE `t_data_diri`
   ADD PRIMARY KEY (`id_data`),
-  ADD KEY `username` (`username`);
+  ADD KEY `username` (`username`),
+  ADD KEY `id_kelas` (`id_kelas`);
+
+--
+-- Indeks untuk tabel `t_kelas`
+--
+ALTER TABLE `t_kelas`
+  ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indeks untuk tabel `t_login`
@@ -127,6 +145,12 @@ ALTER TABLE `t_data_diri`
   MODIFY `id_data` int(255) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `t_kelas`
+--
+ALTER TABLE `t_kelas`
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
@@ -134,7 +158,8 @@ ALTER TABLE `t_data_diri`
 -- Ketidakleluasaan untuk tabel `t_data_diri`
 --
 ALTER TABLE `t_data_diri`
-  ADD CONSTRAINT `t_data_diri_ibfk_1` FOREIGN KEY (`username`) REFERENCES `t_login` (`username`);
+  ADD CONSTRAINT `t_data_diri_ibfk_1` FOREIGN KEY (`username`) REFERENCES `t_login` (`username`),
+  ADD CONSTRAINT `t_data_diri_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `t_kelas` (`id_kelas`);
 
 --
 -- Ketidakleluasaan untuk tabel `t_transaksi`
