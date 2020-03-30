@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="647.0" prefWidth="700.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tugas.Controller.TambahController">
+    <stylesheets>
+        <URL value="@/tugas/css/v_tambah.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="48.0" prefWidth="700.0" style="-fx-background-color: #00A6A3;">
+         <children>
+            <Label layoutX="213.0" layoutY="11.0" text="SYSTEM MANAGEMENT ASSETS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Circle fx:id="myCircle1" fill="DODGERBLUE" layoutX="668.0" layoutY="24.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button layoutY="8.0" mnemonicParsing="false" style="-fx-background-color: #00A6A3;">
+               <graphic>
+                  <MaterialDesignIconView glyphName="ARROW_LEFT_BOLD" size="25" wrappingWidth="25.0" />
+               </graphic>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow color="#000000c4" />
+         </effect>
+      </AnchorPane>
+      <Label layoutX="73.0" layoutY="69.0" text="ADD ITEM">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PLUS_SQUARE_ALT" layoutX="37.0" layoutY="102.0" size="35" text="" />
+      <Line endX="522.0" layoutX="137.0" layoutY="110.0" startX="-100.0" />
+      <GridPane layoutX="37.0" layoutY="123.0" prefHeight="470.0" prefWidth="343.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="111.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.0" minWidth="10.0" prefWidth="232.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="205.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="136.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Kode Barang" />
+            <Label text="Nama Barang" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kategori" GridPane.rowIndex="2" />
+            <Label text="Jumlah" GridPane.rowIndex="3" />
+            <Label text="Lokasi" GridPane.rowIndex="8" />
+            <Label text="Jenis" GridPane.rowIndex="7" />
+            <Label text="Keterangan" GridPane.rowIndex="9">
+               <GridPane.margin>
+                  <Insets top="-55.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="txtIdBarang" prefHeight="25.0" prefWidth="224.0" promptText="ID" GridPane.columnIndex="1" />
+            <TextField fx:id="txtKategori" promptText="Kategori" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtJumlah" promptText="Jumlah Barang" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextArea fx:id="txtKeterangan" prefHeight="111.0" prefWidth="232.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="txtNama" layoutX="121.0" layoutY="16.0" prefHeight="25.0" prefWidth="224.0" promptText="Nama" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cmbLokasi" prefHeight="25.0" prefWidth="237.0" promptText="- Lokasi -" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Harga" GridPane.rowIndex="4" />
+            <TextField fx:id="txtHarga" promptText="Rp. xxxx" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Kondisi" GridPane.rowIndex="6" />
+            <ComboBox fx:id="cmbKondisi" prefHeight="25.0" prefWidth="248.0" promptText="- Kondisi Barang -" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Tanggal Terima" GridPane.rowIndex="5" />
+            <DatePicker fx:id="dtpTanggal" prefHeight="25.0" prefWidth="243.0" promptText="Tanggal" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cmbJenis" prefHeight="25.0" prefWidth="236.0" promptText="- Jenis -" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="186.0" fitWidth="172.0" layoutX="453.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@profil.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="453.0" layoutY="322.0" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #00A6A3;" text="Choose Image" />
+      <JFXButton fx:id="btnSimpan" layoutX="423.0" layoutY="568.0" onAction="#simpanBarang" prefHeight="25.0" prefWidth="232.0" style="-fx-background-color: #00A6A3;" text="Save" />
+   </children>
+</AnchorPane>
