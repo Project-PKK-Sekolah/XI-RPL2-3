@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Tugas.jar" size="28808" download="eager" />
+    <jar href="Tugas.jar" size="28053" download="eager" />
     <jar href="lib\commons-email-1.5.jar" size="54495" download="eager" />
     <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
     <jar href="lib\fontawesomefx-glyphsbrowser-all-1.3.jar" size="5379925" download="eager" />
