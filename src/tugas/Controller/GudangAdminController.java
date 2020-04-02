@@ -11,6 +11,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -23,7 +26,7 @@ import tugas.Main;
  *
  * @author asus
  */
-public class HalamanUtamaUserController implements Initializable {
+public class GudangAdminController implements Initializable {
     
     @FXML
     private AnchorPane anchorPane;
@@ -31,6 +34,7 @@ public class HalamanUtamaUserController implements Initializable {
     @FXML
     private Circle myCircle;
 	
+        
     private double xOffset;
     private double yOffset;
 
@@ -47,8 +51,9 @@ public class HalamanUtamaUserController implements Initializable {
         myCircle.setStroke(Color.WHITE);
         Image img1 = new Image("/tugas/css/profil.jpg", false);
         myCircle.setFill(new ImagePattern(img1));
+        
     }
-    public void moveAnchorPane()
+     public void moveAnchorPane()
 	{
 		anchorPane.setOnMousePressed(event -> {
 	            xOffset = Main.getPrimaryStage().getX() - event.getScreenX();

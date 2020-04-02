@@ -1,111 +1,71 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tugas.Controller;
 
-import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.animation.TranslateTransition;
+import tugas.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.effect.DropShadow;
+import javafx.scene.Cursor;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-import javafx.util.Duration;
 
-/**
- * FXML Controller class
- *
- * @author Roshan
- */
-public class HalamanUtamaController implements Initializable {
+public class HalamanUtamaController implements Initializable{
+
+    @FXML
+    private AnchorPane anchorPane;
     
     @FXML
-    private AnchorPane paneslide;
+    private Circle myCircle;
+	
+    private double xOffset;
+    private double yOffset;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+	this.moveAnchorPane();
+                
+        myCircle.setStroke(Color.WHITE);
+        Image img1 = new Image("/tugas/css/profil.jpg", false);
+        myCircle.setFill(new ImagePattern(img1));
+	}
 
-    @FXML
-    private JFXButton bar2;
+	public void moveAnchorPane()
+	{
+		anchorPane.setOnMousePressed(event -> {
+	            xOffset = Main.getPrimaryStage().getX() - event.getScreenX();
+	            yOffset = Main.getPrimaryStage().getY() - event.getScreenY();
+	            anchorPane.setCursor(Cursor.CLOSED_HAND);
+	        });
 
-    @FXML
-    private JFXButton bar1;
-    
-    @FXML
-    private JFXButton btn1;
+		anchorPane.setOnMouseDragged(event -> {
+			 Main.getPrimaryStage().setX(event.getScreenX() + xOffset);
+			 Main.getPrimaryStage().setY(event.getScreenY() + yOffset);
 
-    @FXML
-    private JFXButton btn2;
-    
-    @FXML
-    private Circle myCircle1;
-    
-    @FXML
-    private Circle myCircle2;
-    
-    /**
-     * Initializes the controller class.
-     * @param url
-     * @param rb
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-       // TODO
-       paneslide.setTranslateX(-222);
-       bar1.setVisible(true);
-       bar2.setVisible(false);
-       
-        myCircle1.setStroke(Color.BLACK);
-        Image img1 = new Image("/tugas/Controller/profil.jpg", false);
-        myCircle1.setFill(new ImagePattern(img1));
-        
-        myCircle2.setStroke(Color.BLACK);
-        Image img2 = new Image("/tugas/Controller/profil.jpg", false);
-        myCircle2.setFill(new ImagePattern(img2));
-       
-    } 
+	        });
+		
+		anchorPane.setOnMouseReleased(event -> {
+			anchorPane.setCursor(Cursor.DEFAULT);
+	        });
+	}
+	
+	 @FXML
+	 public void close(ActionEvent event) {
 
-    @FXML
-    private void run2(MouseEvent event) {
-        TranslateTransition slide = new TranslateTransition();
-        slide.setDuration(Duration.seconds(0.4));
-        slide.setNode(paneslide);
-        
-        slide.setToX(-222);
-        slide.play();
-        
-        paneslide.setTranslateX(0);
-        
-        slide.setOnFinished((ActionEvent e)->{
-            bar1.setVisible(true);
-            bar2.setVisible(false);
-            btn1.setVisible(true);
-            btn2.setVisible(true);
-        });
-    }
+		 Main.getPrimaryStage().close();
+	   
+	 }
 
-    @FXML
-    private void run1(MouseEvent event) {
-        TranslateTransition slide = new TranslateTransition();
-        slide.setDuration(Duration.seconds(0.4));
-        slide.setNode(paneslide);
-        
-        slide.setToX(0);
-        slide.play();
-        
-        paneslide.setTranslateX(-222);
-        
-        slide.setOnFinished((ActionEvent e)->{
-            bar1.setVisible(false);
-            bar2.setVisible(true);
-            btn1.setVisible(false);
-            btn2.setVisible(false);
-        });
-    }
+	
+
+	  @FXML
+	  public void min(ActionEvent event) {
+
+	    	 Main.getPrimaryStage().setIconified(true);
+	  }
+	    
 }
