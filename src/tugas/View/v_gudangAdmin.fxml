@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="945.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tugas.Controller.HalamanUtamaController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="1027.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tugas.Controller.GudangAdminController">
    <children>
       <Text fill="#05d39b" layoutX="69.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SYSTEM MANAGEMENT SCHOOL">
          <font>
@@ -96,23 +96,23 @@
          </children>
       </AnchorPane>
       <FontAwesomeIconView fill="#17ca9a" glyphName="DROPBOX" layoutX="33.0" layoutY="67.0" size="30" />
-      <AnchorPane prefHeight="30.0" prefWidth="945.0" style="-fx-background-color: #17ca9a;">
+      <AnchorPane prefHeight="30.0" prefWidth="1027.0" style="-fx-background-color: #17ca9a;">
          <children>
             <Button contentDisplay="GRAPHIC_ONLY" layoutX="867.0" mnemonicParsing="false" onAction="#min" prefHeight="21.0" prefWidth="31.0" style="-fx-background-color: #17ca9a;" text="Button" textFill="#17ca9a00" AnchorPane.rightAnchor="46.0">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="MINUS" size="20" />
                </graphic>
             </Button>
-            <Button contentDisplay="GRAPHIC_ONLY" layoutX="903.0" mnemonicParsing="false" onAction="#close" prefHeight="9.0" prefWidth="31.0" style="-fx-background-color: #17ca9a;" text="Button" AnchorPane.rightAnchor="10.0">
+            <Button contentDisplay="GRAPHIC_ONLY" layoutX="903.0" mnemonicParsing="false" onAction="#close" prefHeight="9.0" prefWidth="19.0" style="-fx-background-color: #17ca9a;" text="Button" AnchorPane.rightAnchor="10.0">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="20" />
                </graphic>
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="265.0" layoutY="84.0" prefHeight="545.0" prefWidth="680.0" style="-fx-background-color: #f3fcfb;">
+      <AnchorPane layoutX="265.0" layoutY="84.0" prefHeight="545.0" prefWidth="760.0" style="-fx-background-color: #f3fcfb;">
          <children>
-            <GridPane layoutX="19.0" layoutY="65.0" prefHeight="417.0" prefWidth="643.0">
+            <GridPane layoutX="19.0" layoutY="65.0" prefHeight="417.0" prefWidth="724.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
@@ -120,19 +120,22 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TableView prefHeight="406.0" prefWidth="643.0" stylesheets="@../../tugas.css/table.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                  <TableView fx:id="table" prefHeight="417.0" prefWidth="778.0" stylesheets="@../../tugas.css/table.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <columns>
-                        <TableColumn minWidth="-1.0" prefWidth="45.0" text="ID" />
-                        <TableColumn minWidth="-Infinity" prefWidth="118.0" text="Brand" />
-                        <TableColumn minWidth="-Infinity" prefWidth="109.0" text="Category" />
-                        <TableColumn minWidth="-Infinity" prefWidth="115.0" text="UoM" />
-                        <TableColumn minWidth="-Infinity" prefWidth="83.0" text="Amount" />
-                        <TableColumn minWidth="-Infinity" prefWidth="172.0" text="Action" />
+                        <TableColumn fx:id="col_id" minWidth="-1.0" prefWidth="50.0" text="ID" />
+                        <TableColumn fx:id="col_brand" minWidth="-Infinity" prefWidth="114.0" text="Brand" />
+                        <TableColumn fx:id="col_category" minWidth="-Infinity" prefWidth="108.0" text="Category" />
+                        <TableColumn fx:id="col_qty" minWidth="-Infinity" prefWidth="51.0" text="QTY" />
+                        <TableColumn fx:id="col_uom" minWidth="-Infinity" prefWidth="51.0" text="UoM" />
+                        <TableColumn fx:id="col_price" minWidth="-Infinity" prefWidth="82.0" text="Price" />
+                        <TableColumn fx:id="col_amount" minWidth="-Infinity" prefWidth="92.0" text="Amount" />
+                        <TableColumn fx:id="col_date" minWidth="-Infinity" prefWidth="103.0" text="Date" />
+                        <TableColumn fx:id="col_action" minWidth="-Infinity" prefWidth="72.0" text="Action" />
                      </columns>
                   </TableView>
                </children>
             </GridPane>
-            <TextField layoutX="424.0" layoutY="18.0" prefHeight="36.0" prefWidth="235.0" promptText="Search" style="-fx-border-radius: 25px; -fx-background-color: white; -fx-border-color: #17ca9a; -fx-background-radius: 25px;">
+            <TextField layoutX="508.0" layoutY="18.0" prefHeight="36.0" prefWidth="235.0" promptText="Search" style="-fx-border-radius: 25px; -fx-background-color: white; -fx-border-color: #17ca9a; -fx-background-radius: 25px;">
                <font>
                   <Font name="Century Gothic" size="13.0" />
                </font>
@@ -145,12 +148,12 @@
                   <FontAwesomeIconView fill="#17ca9a" glyphName="PLUS" size="20" wrappingWidth="22.714285850524902" />
                </graphic>
             </Button>
-            <FontAwesomeIconView fill="#d0cfcf" glyphName="SEARCH" layoutX="629.0" layoutY="42.0" size="20" />
-            <Pagination layoutX="484.0" layoutY="481.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="56.0" prefWidth="186.0" />
+            <FontAwesomeIconView fill="#d0cfcf" glyphName="SEARCH" layoutX="713.0" layoutY="43.0" size="20" />
+            <Pagination layoutX="557.0" layoutY="482.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="56.0" prefWidth="186.0" />
          </children>
       </AnchorPane>
-      <Circle fx:id="myCircle" fill="#17ca9a" layoutX="858.0" layoutY="56.0" radius="18.0" stroke="#bababa" strokeType="INSIDE" />
-      <Label layoutX="883.0" layoutY="47.0" text="ADMIN" textFill="#bababa">
+      <Circle fx:id="myCircle" fill="#17ca9a" layoutX="940.0" layoutY="56.0" radius="18.0" stroke="#bababa" strokeType="INSIDE" />
+      <Label layoutX="965.0" layoutY="47.0" text="ADMIN" textFill="#bababa">
          <font>
             <Font name="Century Gothic Bold" size="14.0" />
          </font>
@@ -158,7 +161,6 @@
    </children>
    <stylesheets>
       <URL value="@../css/table.css" />
-      <URL value="@../css/TabPane.css" />
       <URL value="@../css/v_gudang.css" />
    </stylesheets>
 </AnchorPane>

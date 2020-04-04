@@ -23,7 +23,7 @@ public class HalamanUtamaController implements Initializable{
 	
     private double xOffset;
     private double yOffset;
-	
+   	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
