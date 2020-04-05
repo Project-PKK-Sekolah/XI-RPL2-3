@@ -10,13 +10,13 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	
-	 private static Stage primaryStageObj;
+	private static Stage primaryStageObj;
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			primaryStageObj = primaryStage;
-			Parent root = FXMLLoader.load(getClass().getResource("/tugas/View/v_gudangAdmin.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/tugas/View/v_pengembalian.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);

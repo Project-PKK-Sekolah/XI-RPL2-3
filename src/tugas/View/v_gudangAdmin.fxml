@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -112,7 +113,7 @@
       </AnchorPane>
       <AnchorPane layoutX="265.0" layoutY="84.0" prefHeight="545.0" prefWidth="760.0" style="-fx-background-color: #f3fcfb;">
          <children>
-            <GridPane layoutX="19.0" layoutY="65.0" prefHeight="417.0" prefWidth="724.0">
+            <GridPane layoutX="19.0" layoutY="129.0" prefHeight="353.0" prefWidth="724.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                </columnConstraints>
@@ -123,24 +124,19 @@
                   <TableView fx:id="table" prefHeight="417.0" prefWidth="778.0" stylesheets="@../../tugas.css/table.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <columns>
                         <TableColumn fx:id="col_id" minWidth="-1.0" prefWidth="50.0" text="ID" />
-                        <TableColumn fx:id="col_brand" minWidth="-Infinity" prefWidth="114.0" text="Brand" />
-                        <TableColumn fx:id="col_category" minWidth="-Infinity" prefWidth="108.0" text="Category" />
-                        <TableColumn fx:id="col_qty" minWidth="-Infinity" prefWidth="51.0" text="QTY" />
-                        <TableColumn fx:id="col_uom" minWidth="-Infinity" prefWidth="51.0" text="UoM" />
-                        <TableColumn fx:id="col_price" minWidth="-Infinity" prefWidth="82.0" text="Price" />
-                        <TableColumn fx:id="col_amount" minWidth="-Infinity" prefWidth="92.0" text="Amount" />
-                        <TableColumn fx:id="col_date" minWidth="-Infinity" prefWidth="103.0" text="Date" />
-                        <TableColumn fx:id="col_action" minWidth="-Infinity" prefWidth="72.0" text="Action" />
+                        <TableColumn fx:id="col_action1" minWidth="-Infinity" prefWidth="85.0" text="Name Item" />
+                        <TableColumn fx:id="col_brand" minWidth="-Infinity" prefWidth="89.0" text="Brand" />
+                        <TableColumn fx:id="col_category" minWidth="-Infinity" prefWidth="93.0" text="Category" />
+                        <TableColumn fx:id="col_date" minWidth="-Infinity" prefWidth="95.0" text="Date" />
+                        <TableColumn fx:id="col_qty" minWidth="-Infinity" prefWidth="61.0" text="QTY" />
+                        <TableColumn fx:id="col_price" minWidth="-Infinity" prefWidth="81.0" text="Price" />
+                        <TableColumn fx:id="col_amount" minWidth="-Infinity" prefWidth="83.0" text="Total" />
+                        <TableColumn fx:id="col_action" minWidth="-Infinity" prefWidth="86.0" text="Action" />
                      </columns>
                   </TableView>
                </children>
             </GridPane>
-            <TextField layoutX="508.0" layoutY="18.0" prefHeight="36.0" prefWidth="235.0" promptText="Search" style="-fx-border-radius: 25px; -fx-background-color: white; -fx-border-color: #17ca9a; -fx-background-radius: 25px;">
-               <font>
-                  <Font name="Century Gothic" size="13.0" />
-               </font>
-            </TextField>
-            <Button layoutX="19.0" layoutY="18.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" style="-fx-background-color: white; -fx-border-color: #17ca9a; -fx-border-radius: 3px;" text="Add Item" textFill="#17ca9a">
+            <Button layoutX="19.0" layoutY="85.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="139.0" style="-fx-background-color: white; -fx-border-color: #17ca9a; -fx-border-radius: 3px;" text="Add Item" textFill="#17ca9a">
                <font>
                   <Font name="Century Gothic" size="13.0" />
                </font>
@@ -148,12 +144,28 @@
                   <FontAwesomeIconView fill="#17ca9a" glyphName="PLUS" size="20" wrappingWidth="22.714285850524902" />
                </graphic>
             </Button>
-            <FontAwesomeIconView fill="#d0cfcf" glyphName="SEARCH" layoutX="713.0" layoutY="43.0" size="20" />
             <Pagination layoutX="557.0" layoutY="482.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="56.0" prefWidth="186.0" />
+            <TextField layoutX="498.0" layoutY="87.0" prefHeight="36.0" prefWidth="207.0" promptText="Search" style="-fx-background-radius: 20px 0px 0px 20px; -fx-background-color: white; -fx-border-color: #17ca9a; -fx-border-radius: 20px 0px 0px 20px;">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="705.0" layoutY="87.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="37.0" style="-fx-background-radius: 0px 20px 20px 0px; -fx-background-color: #17ca9a; -fx-border-color: none; -fx-border-radius: 0px 20px 20px 0px;">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="20" wrappingWidth="18.571428298950195" />
+               </graphic>
+            </Button>
+            <Text fill="#bababa" layoutX="77.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WAREHOUSE">
+               <font>
+                  <Font name="Century Gothic Bold" size="36.0" />
+               </font>
+            </Text>
+            <Line endX="617.0" endY="-1.52587890625E-5" layoutX="126.0" layoutY="59.0" startX="-106.0" startY="-1.52587890625E-5" stroke="#bababa" />
+            <MaterialIconView fill="#17ca9a" glyphName="INBOX" layoutX="20.0" layoutY="53.0" size="50" text="" wrappingWidth="48.0000165104866" />
          </children>
       </AnchorPane>
-      <Circle fx:id="myCircle" fill="#17ca9a" layoutX="940.0" layoutY="56.0" radius="18.0" stroke="#bababa" strokeType="INSIDE" />
-      <Label layoutX="965.0" layoutY="47.0" text="ADMIN" textFill="#bababa">
+      <Circle fx:id="myCircle" fill="#17ca9a" layoutX="942.0" layoutY="56.0" radius="18.0" stroke="#bababa" strokeType="INSIDE" />
+      <Label layoutX="967.0" layoutY="47.0" text="ADMIN" textFill="#bababa">
          <font>
             <Font name="Century Gothic Bold" size="14.0" />
          </font>
